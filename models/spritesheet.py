@@ -1,6 +1,6 @@
 import pygame
 
-from const import BLUE_BACKGROUND
+from options.const import BLUE_BACKGROUND
 
 class SpriteSheet:
 

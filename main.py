@@ -1,12 +1,12 @@
 import pygame
 
-from const import *
-from player import Player
-from spritesheet import SpriteSheet
+from options.const import *
+from models.character import Character
+from models.spritesheet import SpriteSheet
 
 pygame.init()
 
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Framebreak - The Drawn Ones")
 clock = pygame.time.Clock()
 
@@ -30,7 +30,7 @@ animations["idle"].append(spritesheet.get_image(
         0,
         CHARACTER_FRAME_WIDTH,
         CHARACTER_FRAME_HEIGHT,
-        scale=3
+        scale=CHARACTER_SCALE
     ))
 
 animations["jumping"].append(spritesheet.get_image(
@@ -38,7 +38,7 @@ animations["jumping"].append(spritesheet.get_image(
         CHARACTER_FRAME_HEIGHT + BORDER_THICKNESS,
         CHARACTER_FRAME_WIDTH,
         CHARACTER_FRAME_HEIGHT,
-        scale=3
+        scale=CHARACTER_SCALE
     ))
 
 
@@ -49,18 +49,20 @@ for col in range(12):
         (CHARACTER_FRAME_HEIGHT + BORDER_THICKNESS) * 2,
         CHARACTER_FRAME_WIDTH,
         CHARACTER_FRAME_HEIGHT,
-        scale=3
+        scale=CHARACTER_SCALE
     )
 
     animations["walking"].append(frame)
     
 running = True
 
-player = Player(
+player = Character(
     400,
-    400,
+    GROUND_Y,
     animations
 )
+
+print(GROUND_Y)
 
 while running:
 

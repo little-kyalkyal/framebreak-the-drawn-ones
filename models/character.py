@@ -1,9 +1,9 @@
 import pygame
 
-from const import BLUE_BACKGROUND
+from options.const import BLUE_BACKGROUND, GROUND_Y
 
 
-class Player:
+class Character:
 
     def __init__(self, x, y, animations):
 
@@ -86,12 +86,11 @@ class Player:
 
         self.pos.y += self.velocity_y * dt
 
-        if self.pos.y >= 400:
+        if self.pos.y >= GROUND_Y:
 
-            self.pos.y = 400
+            self.pos.y = GROUND_Y
 
             self.velocity_y = 0
-
             self.on_ground = True
 
         self.update_state(moving)
