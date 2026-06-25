@@ -1,0 +1,15 @@
+FPS = 60
+
+CHARACTER_FRAME_WIDTH = 32
+CHARACTER_FRAME_HEIGHT = 52
+BORDER_THICKNESS = 1
+
+BACKGROUND_IMAGE = "images/background.png"
+CRIMSON_1 = "images/crimson_1.png"
+CRIMSON_2 = "images/crimson_2.png"
+CRIMSON_3 = "images/crimson_3.png"
+
+TAVERNKEEPER_IMG = "images/tavernkeeper.png"
+PRINCESS_IMG = "images/princess.png"
+
+BLUE_BACKGROUND = (121, 230, 234)
